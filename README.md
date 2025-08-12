@@ -1,58 +1,64 @@
-# Light It Up! – Arduino-Enhanced Board Game
+# Light It Up! – Arduino Board Game
 
-**Light It Up!** is an educational and interactive board game that teaches players about **e-waste recycling** and **energy efficiency**.  
-Players move around a circular board, collecting and processing e-waste while balancing their water and energy usage.  
-The goal is to be the first to reach the **Light-Up Threshold** or have the highest score when time runs out.
-
-This repository contains the **Arduino code and wiring** that powers the game's physical elements — including a central light bulb and buzzer for audio feedback.
-
----
-
-## 🎯 Gameplay Overview
-
-- **Theme:** E-waste recycling & energy efficiency  
-- **Players:** 2–6  
-- **Average Play Time:** ~15 minutes  
-- **Winning Conditions:**
-  - **Light-Up Victory:** The first player to reach the point threshold (20 points for 2–3 players, 15 points for 4–6 players) presses the Light-Up Button, turning on the bulb and winning instantly.
-  - **Time Victory:** If time runs out before anyone reaches the threshold, the player with the highest score wins, and the End Button is pressed to light the bulb.
+## Overview
+**Light It Up!** is an educational board game integrating concepts of **e-waste management** and **energy efficiency**.  
+Players move around a circular board collecting points, avoiding hazards, and processing e-waste in the most efficient way possible.  
+The Arduino Uno controls the electronic feedback system with buttons, a buzzer, and a light bulb that marks victory.
 
 ---
 
-## 🎮 How It Works in the Game
-1. **Start of Game:** Press the **Start Button** — the buzzer beeps to signal the game has begun.
-2. **During Play:** Players move around the board, collect points, and encounter hazards.
-3. **Threshold Reached:** If a player hits the threshold, they press the **Light-Up Button** — the bulb turns on and the buzzer sounds.
-4. **Time Runs Out:** If no one reaches the threshold in time, press the **End Button** — the bulb still lights and the buzzer sounds.
+## Features
+- Interactive **Arduino Uno** integration
+- **Start**, **End**, and **Light-Up** buttons for gameplay control
+- **LED Bulb** that lights up upon reaching the victory threshold
+- **Buzzer** feedback for start, win, and end
+- Educational mechanics tied to sustainability concepts
 
 ---
 
-## 🛠 Hardware Features
-- **Start Button** – Begins the game; buzzer sounds to confirm start.
-- **Light-Up Button** – Player presses this when reaching the score threshold; triggers bulb + buzzer.
-- **End Button** – Used when the timer runs out; triggers bulb + buzzer.
-- **Buzzer** – Provides audio feedback for start and victory events.
-- **LED Bulb** – Lights up when the Light-Up or End Button is pressed.
+## Winning Conditions
+- **Light-Up Victory**: First player to reach the Energy Threshold (20 points for 2–3 players, 15 points for 4–6 players) and press the Light-Up button.
+- **Time Victory**: If no one reaches the threshold in the allotted 15 minutes, the player with the highest Energy score wins.
 
 ---
 
-## 📦 Required Components
+## Repository Contents
+- `LightItUp_Game.ino` → Arduino code for controlling buttons, buzzer, and light bulb.
+- `Game_Instructions.md` → Full game setup and gameplay rules.
+- `wiring_diagram.png` → Circuit diagram for assembling the game’s electronic components.
+- `README.md` → This file.
+
+---
+
+## Quick Start
+1. Assemble components according to the wiring diagram.
+2. Upload `LightItUp_Game.ino` to your Arduino Uno using the [Arduino IDE](https://www.arduino.cc/en/software).
+3. Set up the board game pieces and score sheets.
+4. Press the **Start** button to begin play.
+
+---
+
+## Full Instructions
+📄 See the [Game Instructions](instructions.md) for full rules, setup guide, and gameplay flow.
+
+---
+
+## Materials List
 - Voltaat Uno R3 (ATmega328P)
-- 1 × Small LED bulb
-- 3 × Push buttons (Start, Light-Up, End)
-- 1 × Buzzer (passive or active)
-- Resistors (10kΩ for buttons, ~220Ω for LED)
-- Jumper wires & breadboard or PCB
+- Small LED bulb
+- Buzzer
+- Start Button, End Button, Light-Up Button
+- Resistors (10 kΩ for pull-down/pull-up)
+- Breadboard, jumper wires
+- Power supply (USB or 9V DC adapter)
 
 ---
 
-## 💻 Code Files
-- `main.ino` – Core Arduino logic.
-- `tones.h` – Tone frequency definitions for buzzer sounds.
-- `README.md` – Project documentation.
+## Educational Value
+**E-Waste**: Demonstrates the importance of proper e-waste processing by rewarding sustainable methods and penalizing hazardous practices.  
+**Energy Efficiency**: Encourages players to maximize net gains, simulating how efficiency impacts energy savings in real-world scenarios.
 
 ---
 
-## 📚 Educational Value
-- **E-Waste Awareness:** Teaches players how improper disposal impacts the environment.
-- **Energy Efficiency:** Encourages strategic thinking on balancing energy gain with water conservation.
+## License
+MIT License – free to use, modify, and distribute.
