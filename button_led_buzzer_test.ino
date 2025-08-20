@@ -1,25 +1,46 @@
+// Button + LED + Buzzer Test
+// Light It Up! Board Game - Hardware Testing Sketch
+// --------------------------------------
+// Button 1 (pin 2) → Toggle LED, buzzer beeps once
+// Button 2 (pin 3) → Force LED ON, buzzer beeps twice
+// Button 3 (pin 4) → Force LED OFF, buzzer beeps three times
+// LED on pin 13
+// Buzzer on pin 9
+
 const int button1Pin = 2;   // Button 1 = toggle LED
 const int button2Pin = 3;   // Button 2 = force ON
 const int button3Pin = 4;   // Button 3 = force OFF
 const int ledPin = 13;      // LED
+const int buzzerPin = 9;    // Buzzer
 
-int ledState = LOW;         // current LED state
-int lastButton1State = HIGH; // previous state for button 1
+int ledState = LOW;         
+int lastButton1State = HIGH; 
 
 void setup() {
   pinMode(button1Pin, INPUT_PULLUP);
   pinMode(button2Pin, INPUT_PULLUP);
   pinMode(button3Pin, INPUT_PULLUP);
   pinMode(ledPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void beep(int times) {
+  for (int i = 0; i < times; i++) {
+    digitalWrite(buzzerPin, HIGH);
+    delay(150);
+    digitalWrite(buzzerPin, LOW);
+    delay(150);
+  }
 }
 
 void loop() {
   // --- Button 1: Toggle ---
   int button1State = digitalRead(button1Pin);
   if (button1State == LOW && lastButton1State == HIGH) {
-    ledState = !ledState;              // toggle
+    ledState = !ledState;              
     digitalWrite(ledPin, ledState);
-    delay(200);                        // debounce
+    beep(1);  // buzz once
+    delay(200);                        
   }
   lastButton1State = button1State;
 
@@ -27,13 +48,15 @@ void loop() {
   if (digitalRead(button2Pin) == LOW) {
     ledState = HIGH;
     digitalWrite(ledPin, ledState);
-    delay(200); // debounce
+    beep(2); // buzz twice
+    delay(200); 
   }
 
   // --- Button 3: Force OFF ---
   if (digitalRead(button3Pin) == LOW) {
     ledState = LOW;
     digitalWrite(ledPin, ledState);
-    delay(200); // debounce
+    beep(3); // buzz three times
+    delay(200); 
   }
 }
