@@ -47,7 +47,7 @@ The Arduino Uno controls the electronic feedback system with buttons, a buzzer, 
 
 ## Quick Start ⚡
 1. Assemble components according to the wiring diagram 🔧.
-2. Upload `LightItUp_Game.ino` to your Arduino Uno using the [Arduino IDE](https://www.arduino.cc/en/software) 🖥️.
+2. Upload `game_main.ino` to your Arduino Uno using the [Arduino IDE](https://www.arduino.cc/en/software) 🖥️.
 3. Set up the board game pieces and score sheets 🎲.
 4. Press the **Start (Button 1)** to begin the round ⏱️.
 5. Players move around the circular board, apply zone effects, and use buttons according to game rules 🌀.
@@ -55,10 +55,10 @@ The Arduino Uno controls the electronic feedback system with buttons, a buzzer, 
 ---
 
 ## Materials List 🛠️
-- Voltaat Uno R3 (ATmega328P) 🖥️
+- Voltaat/Arduino Uno R3 (ATmega328P) 🖥️
 - Small LED bulb 💡
 - Buzzer 🔊
-- Start Button (Button 1) ⏱️, Instant Win Button (Button 2) 🏆, End Round Button (Button 3) 🔄
+- Mini Momentary Push Buttons 🔘
 - Breadboard, jumper wires, alligator clip cables 🔌
 - Power supply (USB or 9V DC adapter) ⚡
 
