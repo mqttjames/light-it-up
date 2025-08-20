@@ -1,12 +1,3 @@
-// Button + LED + Buzzer Test
-// Light It Up! Board Game - Hardware Testing Sketch
-// --------------------------------------
-// Button 1 (pin 2) → Toggle LED, buzzer beeps once
-// Button 2 (pin 3) → Force LED ON, buzzer beeps twice
-// Button 3 (pin 4) → Force LED OFF, buzzer beeps three times
-// LED on pin 13
-// Buzzer on pin 9
-
 const int button1Pin = 2;   // Button 1 = toggle LED
 const int button2Pin = 3;   // Button 2 = force ON
 const int button3Pin = 4;   // Button 3 = force OFF
